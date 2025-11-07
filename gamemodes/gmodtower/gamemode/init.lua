@@ -254,8 +254,8 @@ end
 
 // use GetHostName()
 timer.Remove( "HostNameThink" )
-//Garrys function is no longer aprecicated
-//Handled in server/admin.lua
+// Garrys function is no longer aprecicated
+// Handled in server/admin.lua
 hook.Remove( "PlayerInitialSpawn", "PlayerAuthSpawn")
 
 local function CanUseFuckingModel(ply,model,skin)

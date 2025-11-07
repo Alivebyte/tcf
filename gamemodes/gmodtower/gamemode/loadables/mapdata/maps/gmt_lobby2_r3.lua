@@ -25,15 +25,17 @@ local condoDoorData = {
 
 local function GetNearestCondo( pos )
 
-	local doors = {}
+	local doors_dist = {}
 
-	for k,v in pairs( ents.FindByClass("gmt_condo_door") ) do
+	local doors = {}
+	for k,v in ipairs( ents.FindByClass("gmt_condo_door") ) do
 		if v:GetCondoDoorType() == 1 then
+			doors_dist[k] = v:GetPos():Distance(pos)
 			doors[v] = v:GetPos():Distance(pos)
 		end
 	end
-
-	local value = math.min( unpack( doors ) )
+	
+	local value = math.min( unpack( doors_dist ) )
 	local door = table.KeyFromValue( doors, value )
 
 	if !IsValid(door) then return end

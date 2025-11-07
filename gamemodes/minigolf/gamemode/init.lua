@@ -26,7 +26,7 @@ include("shared.lua");
 include("sv_control.lua");
 
 CreateConVar("gmt_srvid", 14 )
-CreateConVar("mp_flashlight", 0 )
+--CreateConVar("mp_flashlight", 0 )
 
 -----------------------------------------------------
 function GM:Intialize()
@@ -271,15 +271,16 @@ end)
 
 hook.Add( "PlayerInitialSpawn", "InitialSpawnCheck", function( ply )
 	if #player.GetAll() == 1 && !ply:IsBot() then
-		GAMEMODE:BeginGame()
 		ply:ChatPrint("You are the first to join, waiting for additional players!")
 	end
 
 	if !ply:IsBot() then
 		ply:SetNWString( "BallColor", "1 1 1" )
 		ply:SetNWInt( "Swing", 0 )
+		GAMEMODE:BeginGame()
 	end
 
+	
 end)
 hook.Add( "PostGamemodeLoaded", "FlagSpawing", FlagSetup )
 --hook.Add( "Initialize", "FlagSpawing", FlagSetup )

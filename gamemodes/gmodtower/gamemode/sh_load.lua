@@ -293,7 +293,7 @@ function LoadModulesInOrder()
 		{ "base/vip", false }, // vip!
 		{ "base/friends", true }, // friends
 		//{ "base/globalserver", true }, // global server
-		//{ "base/discord_rpc", false }, // discord rich presence
+		{ "base/discord_rpc", false }, // discord rich presence
 	}
 
 	for id, mod in ipairs( ModulesLoadOrder ) do

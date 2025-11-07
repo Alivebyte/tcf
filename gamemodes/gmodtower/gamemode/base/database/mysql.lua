@@ -32,7 +32,7 @@ end
 function connectToDatabase()
 	if dbObject then return end
 	
-	local db, err = tmysql.Connect( sqlCred['address'], sqlCred['user'], sqlCred['pass'], sqlCred['table'], sqlCred['port'], 3306, nil, 3 )
+	local db, err = tmysql.Connect( sqlCred['address'], sqlCred['user'], sqlCred['pass'], sqlCred['table'], sqlCred['port'], nil, 3 )
 
 	if err then
 		MsgC( co_color2, "[Database] DATABASE FAILED TO CONNECT!\n" )

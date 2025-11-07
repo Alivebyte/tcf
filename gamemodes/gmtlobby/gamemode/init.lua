@@ -1,5 +1,5 @@
 ----------------------------------------------
-PRIVATE_TEST_MODE = true
+PRIVATE_TEST_MODE = false
 
 util.AddNetworkString("AdminMessage")
 util.AddNetworkString("gmt_gamemodestart")
