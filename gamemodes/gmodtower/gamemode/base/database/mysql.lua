@@ -101,9 +101,9 @@ end
 function SqlError( error )
 	local Match = string.match( error, "Table '([%a_]+)' is marked as crashed and should be repaired" )
 
-	analytics.postDiscord( "SQL ERROR", Match .. " marked as crashed. Repairing it." )
-
 	if Match then
+
+		analytics.postDiscord( "SQL ERROR", Match .. " marked as crashed. Repairing it." )
 
 		SQLLog('error', Match .. " marked as crashed. Repairing it." )
 
